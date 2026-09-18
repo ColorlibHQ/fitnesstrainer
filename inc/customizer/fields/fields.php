@@ -14,10 +14,10 @@
  ***********************************/
 
  // Theme color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_theme_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Theme Color', 'fitnstr' ),
         'description' => esc_html__( 'Select the theme color.', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
@@ -27,10 +27,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Header color sections
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'header_color_section',
     array(
-        'type'        => 'epsilon-separator',
+        'type'        => 'colorlib-separator',
         'label'       => esc_html__( 'Header Color Section', 'fitnstr' ),
         'section'     => 'fitnstr_header_section',
 
@@ -39,10 +39,10 @@ Epsilon_Customizer::add_field(
 
  
 // Sticky Header background color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_header_bg_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Sticky Header BG Color', 'fitnstr' ),
         'description' => esc_html__( 'Select the header background color for Home page.', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
@@ -52,10 +52,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Sticky Header background color field for inner pages
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_header_bg_color_inner_pages',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Sticky Header BG Color For Inner Pages', 'fitnstr' ),
         'description' => esc_html__( 'Select the sticky header background color for inner pages.', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
@@ -65,10 +65,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Header nav menu color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_header_menu_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header menu color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_header_section',
@@ -77,10 +77,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Header nav menu hover color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_header_menu_hover_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header menu hover color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_header_section',
@@ -89,10 +89,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Header nav menu hover shade color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_header_menu_hover_shade_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header menu hover shade color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_header_section',
@@ -106,7 +106,7 @@ Epsilon_Customizer::add_field(
  ***********************************/
  
 // Post excerpt length field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_excerpt_length',
     array(
         'type'        => 'text',
@@ -119,28 +119,28 @@ Epsilon_Customizer::add_field(
 );
 
 // Blog single page social share icon
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_blog_meta',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Blog page post meta show/hide', 'fitnstr' ),
         'section'     => 'fitnstr_blog_section',
         'default'     => true
     )
 );
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_like_btn',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Blog Single Page Like Button show/hide', 'fitnstr' ),
         'section'     => 'fitnstr_blog_section',
         'default'     => true
     )
 );
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_blog_share',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Blog Single Page Share show/hide', 'fitnstr' ),
         'section'     => 'fitnstr_blog_section',
         'default'     => true
@@ -153,7 +153,7 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // 404 text #1 field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_fof_titleone',
     array(
         'type'              => 'text',
@@ -164,7 +164,7 @@ Epsilon_Customizer::add_field(
     )
 );
 // 404 text #2 field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_fof_titletwo',
     array(
         'type'              => 'text',
@@ -175,10 +175,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // 404 text #1 color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_fof_textone_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( '404 Text #1 Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_fof_section',
@@ -186,10 +186,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // 404 text #2 color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_fof_texttwo_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( '404 Text #2 Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_fof_section',
@@ -202,10 +202,10 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // Social Profile section
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'social_pro_separator',
     array(
-        'type'        => 'epsilon-separator',
+        'type'        => 'colorlib-separator',
         'label'       => esc_html__( 'Social Profile Section', 'fitnstr' ),
         'section'     => 'fitnstr_footer_section',
         'default'     => true,
@@ -214,10 +214,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Social Profile Show/Hide
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_social_profile_toggle',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Social Profile Show/Hide', 'fitnstr' ),
         'section'     => 'fitnstr_footer_section',
         'default'     => true,
@@ -225,10 +225,10 @@ Epsilon_Customizer::add_field(
 );
 
 //Social Profile links
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fitnstr_header_social',
 	array(
-		'type'         => 'epsilon-repeater',
+		'type'         => 'colorlib-repeater',
 		'section'      => 'fitnstr_footer_section',
 		'label'        => esc_html__( 'Social Profile Links', 'fitnstr' ),
         'button_label' => esc_html__( 'Add new social link', 'fitnstr' ),
@@ -251,7 +251,7 @@ Epsilon_Customizer::add_field(
 			),
 			'social_icon'        => array(
 				'label'   => esc_html__( 'Icon', 'fitnstr' ),
-				'type'    => 'epsilon-icon-picker',
+				'type'    => 'colorlib-icon-picker',
 				'default' => 'fa fa-twitter',
 			),
 			
@@ -260,10 +260,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer Copyright section
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_copyright_separator',
     array(
-        'type'        => 'epsilon-separator',
+        'type'        => 'colorlib-separator',
         'label'       => esc_html__( 'Footer Copyright Section', 'fitnstr' ),
         'section'     => 'fitnstr_footer_section',
         'default'     => true,
@@ -275,10 +275,10 @@ Epsilon_Customizer::add_field(
 // Copy right text
 $url = 'https://colorlib.com/';
 $copyText = sprintf( __( 'Theme by %s colorlib %s Copyright &copy; %s  |  All rights reserved.', 'fitnstr' ), '<a target="_blank" href="' . esc_url( $url ) . '">', '</a>', date( 'Y' ) );
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_copyright_text',
     array(
-        'type'        => 'epsilon-text-editor',
+        'type'        => 'colorlib-text-editor',
         'label'       => esc_html__( 'Footer copyright text', 'fitnstr' ),
         'section'     => 'fitnstr_footer_section',
         'default'     => wp_kses_post( $copyText ),
@@ -286,10 +286,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer widget background color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_bg_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Background Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
@@ -298,10 +298,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer widget text color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_widget_text_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Text Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
@@ -310,10 +310,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer widget anchor color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_widget_anchor_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Anchor Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
@@ -322,10 +322,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer widget anchor hover color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_widget_anchor_hover_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Anchor Hover Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
@@ -334,10 +334,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer Social icon section
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_soc_icon_separator',
     array(
-        'type'        => 'epsilon-separator',
+        'type'        => 'colorlib-separator',
         'label'       => esc_html__( 'Footer Social Icon Section', 'fitnstr' ),
         'section'     => 'fitnstr_footer_section',
         'default'     => true,
@@ -346,10 +346,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer Social icon bg color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_soc_icon_bg_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Social Icon BG Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
@@ -358,10 +358,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer Social icon color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_soc_icon_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Social icon Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
@@ -370,10 +370,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer Social icon hover bg color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_soc_icon_hvr_bg_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Social Icon Hover BG Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
@@ -382,10 +382,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Footer Social icon hover color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'fitnstr_footer_soc_icon_hvr_color',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Social icon Hover Color', 'fitnstr' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitnstr_footer_section',
