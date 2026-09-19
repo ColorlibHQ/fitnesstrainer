@@ -56,19 +56,19 @@ class Fitnstr_social_links extends WP_Widget {
         <div class="social_icon">
             <?php
             if( $facebook ){
-                echo '<a href="'. esc_url( $facebook ) .'"><i class="fa fa-facebook"></i></a>';
+                echo '<a href="'. esc_url( $facebook ) .'"><i class="fa-brands fa-facebook"></i></a>';
             }
             if( $twitter ){
-                echo '<a href="'. esc_url( $twitter ) .'"><i class="fa fa-twitter"></i></a>';
+                echo '<a href="'. esc_url( $twitter ) .'"><i class="fa-brands fa-twitter"></i></a>';
             }
             if( $dribbble ){
-                echo '<a href="'. esc_url( $dribbble ) .'"><i class="fa fa-dribbble"></i></a>';
+                echo '<a href="'. esc_url( $dribbble ) .'"><i class="fa-brands fa-dribbble"></i></a>';
             }
             if( $linkedin ){
-                echo '<a href="'. esc_url( $linkedin ) .'"><i class="fa fa-linkedin"></i></a>';
+                echo '<a href="'. esc_url( $linkedin ) .'"><i class="fa-brands fa-linkedin"></i></a>';
             }
             if( $behance ){
-                echo '<a href="'. esc_url( $behance ) .'"><i class="fa fa-behance"></i></a>';
+                echo '<a href="'. esc_url( $behance ) .'"><i class="fa-brands fa-behance"></i></a>';
             }
             ?>
         </div>

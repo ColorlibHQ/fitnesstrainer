@@ -59,7 +59,7 @@ class Fitnstr_Features extends Widget_Base {
                         'name'      => 'icon',
                         'label'     => __( 'Select Icon', 'fitnstr' ),
                         'type'      => Controls_Manager::ICON,
-                        'default'   => 'fa fa-mobile',
+                        'default'   => 'fa-solid fa-mobile',
                         'options'   => fitnstr_flaticon_list()
                     ],
                     [
