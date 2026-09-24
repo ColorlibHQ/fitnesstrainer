@@ -279,26 +279,19 @@
 						'version' 		=> '1.0',
 						'in_footer' 	=> true
 					),
+					
 					array(
-						'handler'		=> 'fitnesstrainer-jquery-nice-select-js',
-						'file' 			=> $jsPath.'jquery.nice-select.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
+						'handler'		=> 'fitnstr-ui-js',
+						'file' 			=> $jsPath.'colorlib-ui.js',
+						'dependency' 	=> array(),
+						'version' 		=> '2.1.1',
 						'in_footer' 	=> true
 					),
 					array(
-						'handler'		=> 'fitnesstrainer-instagram-feed-js',
-						'file' 			=> $jsPath.'jquery.instagramFeed.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
-						'in_footer' 	=> true
-					),					
-					
-					array(
 						'handler'		=> 'fitnesstrainer-fitnstr-custom',
 						'file' 			=> $jsPath.'custom.js',
-						'dependency' 	=> array( 'jquery', 'masonry' ),
-						'version' 		=> $this->fitnstr_version,
+						'dependency' 	=> array( 'jquery', 'masonry', 'fitnstr-ui-js' ),
+						'version' 		=> $this->fitnstr_version . '-s1',
 						'in_footer' 	=> true
 					),
 
