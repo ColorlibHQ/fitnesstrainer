@@ -240,58 +240,23 @@
 					array(
 						'handler'		=> 'fitnesstrainer-bootstrap',
 						'file' 			=> $jsPath.'bootstrap.min.js',
-						'dependency' 	=> array( 'jquery' ),
+						'dependency' 	=> array(),
 						'version' 		=> '5.3.8-4',
-						'in_footer' 	=> true
-					),
-					array(
-						'handler'		=> 'fitnesstrainer-magnific-popup-js',
-						'file' 			=> $jsPath.'jquery.magnific-popup.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
-						'in_footer' 	=> true
-					),
-					array(
-						'handler'		=> 'fitnesstrainer-swiper-min-js',
-						'file' 			=> $jsPath.'swiper.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
-						'in_footer' 	=> true
-					),
-					array(
-						'handler'		=> 'fitnesstrainer-owl-carousel-js',
-						'file' 			=> $jsPath.'owl.carousel.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
-						'in_footer' 	=> true
-					),
-					array(
-						'handler'		=> 'fitnesstrainer-slick-min-js',
-						'file' 			=> $jsPath.'slick.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
-						'in_footer' 	=> true
-					),
-					array(
-						'handler'		=> 'fitnesstrainer-gijgo-js',
-						'file' 			=> $jsPath.'gijgo.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
 						'in_footer' 	=> true
 					),
 					
 					array(
 						'handler'		=> 'fitnstr-ui-js',
-						'file' 			=> $jsPath.'colorlib-ui.js',
+						'file' 			=> $jsPath . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'colorlib-ui.js' : 'colorlib-ui.min.js' ),
 						'dependency' 	=> array(),
-						'version' 		=> '2.1.1',
+						'version' 		=> '3.0.0',
 						'in_footer' 	=> true
 					),
 					array(
 						'handler'		=> 'fitnesstrainer-fitnstr-custom',
 						'file' 			=> $jsPath.'custom.js',
-						'dependency' 	=> array( 'jquery', 'masonry', 'fitnstr-ui-js' ),
-						'version' 		=> $this->fitnstr_version . '-s1',
+						'dependency' 	=> array( 'masonry', 'fitnstr-ui-js' ),
+						'version' 		=> $this->fitnstr_version . '-s2',
 						'in_footer' 	=> true
 					),
 

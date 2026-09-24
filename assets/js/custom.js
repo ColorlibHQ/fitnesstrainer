@@ -1,9 +1,21 @@
-(function ($) {
-  "use strict";
+/**
+ * Fitness Trainer front-end behaviour, without jQuery.
+ *
+ * The plugin calls keep the options they always had; ColorlibUI provides
+ * drop-in versions of the datepicker, Magnific Popup, Owl Carousel and Slick
+ * that build the same markup, so the theme's stylesheets apply unchanged. The
+ * grid uses WordPress core Masonry through UI.masonry. Also: the fixed menu,
+ * the off-canvas menu and the skill bars.
+ */
+(function () {
+  'use strict';
 
-  $('#datepicker').datepicker();
+  var UI = window.ColorlibUI;
+  if (!UI) return;
 
-  $('.popup_youtube').magnificPopup({
+  UI.datepicker('#datepicker');
+
+  UI.magnific('.popup_youtube', {
     // disableOn: 700,
     type: 'iframe',
     mainClass: 'mfp-fade',
@@ -12,55 +24,54 @@
     fixedContentPos: false
   });
 
-  $(document).ready(function() {
-    ColorlibUI.enhanceSelects('select');
-  });
+  UI.enhanceSelects('select');
 
-  $('.grid').masonry({
+  UI.masonry('.grid', {
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
     percentPosition: true
   });
 
-
-  var review = $('.client_review_part');
-  if (review.length) {
-    review.owlCarousel({
-      items: 1,
-      loop: true,
-      dots: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      autoplayTimeout: 5000,
-      nav: false,
-      smartSpeed: 2000,
-    });
-  }
-  // menu fixed js code
-  $(window).scroll(function () {
-    var window_top = $(window).scrollTop() + 1;
-    if (window_top > 50) {
-      $('.single_page_menu').addClass('menu_fixed animated fadeInDown');
-    } else {
-      $('.single_page_menu').removeClass('menu_fixed animated fadeInDown');
-    }
-  });
-  // menu fixed js code
-  $(window).scroll(function () {
-    var window_top = $(window).scrollTop() + 1;
-    if (window_top > 50) {
-      $('.home_menu').addClass('home_menu_fixed animated fadeInDown');
-    } else {
-      $('.home_menu').removeClass('home_menu_fixed animated fadeInDown');
-    }
+  UI.owl('.client_review_part', {
+    items: 1,
+    loop: true,
+    dots: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout: 5000,
+    nav: false,
+    smartSpeed: 2000
   });
 
+  // menu fixed js code: inner pages (.single_page_menu) and the home page
+  // (.home_menu) each have their own fixed class.
+  UI.ready(function () {
+    var singlePage = UI.toElements('.single_page_menu');
+    var home = UI.toElements('.home_menu');
+    window.addEventListener('scroll', function () {
+      var fixed = window.pageYOffset + 1 > 50;
+      singlePage.forEach(function (menu) {
+        if (fixed) {
+          menu.classList.add('menu_fixed', 'animated', 'fadeInDown');
+        } else {
+          menu.classList.remove('menu_fixed', 'animated', 'fadeInDown');
+        }
+      });
+      home.forEach(function (menu) {
+        if (fixed) {
+          menu.classList.add('home_menu_fixed', 'animated', 'fadeInDown');
+        } else {
+          menu.classList.remove('home_menu_fixed', 'animated', 'fadeInDown');
+        }
+      });
+    }, { passive: true });
+  });
 
-  $('.slider').slick({
+  UI.slick('.slider', {
     slidesToShow: 1,
     speed: 1000,
     infinite: true,
-    autoplay:false,
+    autoplay: false,
     pauseOnHover: true,
     dots: false,
     prevArrow: '<i class="slick_left flaticon-left-arrow"></i>',
@@ -71,7 +82,7 @@
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: true,
+          infinite: true
         }
       },
       {
@@ -81,7 +92,7 @@
           slidesToScroll: 1,
           arrows: false
         }
-      }, 
+      },
       {
         breakpoint: 600,
         settings: {
@@ -101,28 +112,33 @@
     ]
   });
 
-  if ($('.img-gal').length > 0) {
-		$('.img-gal').magnificPopup({
-			type: 'image',
-			gallery: {
-				enabled: true
-			}
-		});
-	}
-//memnu js
-jQuery(document).ready(function ($) {
-  $(".menu-trigger").on('click', function () {
-    $(".off-canven-menu").addClass("active")
-    $(".offcanvas-overlay").addClass("active")
+  UI.magnific('.img-gal', {
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
   });
-  $(".close-icon i, .offcanvas-overlay").on('click', function () {
-    $(".off-canven-menu").removeClass("active")
-    $(".offcanvas-overlay").removeClass("active")
+
+  //memnu js
+  UI.ready(function () {
+    function setOpen(open) {
+      UI.toElements('.off-canven-menu, .offcanvas-overlay').forEach(function (el) {
+        if (open) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+    }
+    UI.toElements('.menu-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () { setOpen(true); });
+    });
+    UI.toElements('.close-icon i, .offcanvas-overlay').forEach(function (close) {
+      close.addEventListener('click', function () { setOpen(false); });
+    });
   });
-});
-var client = $('.client_logo');
-if (client.length) {
-  client.owlCarousel({
+
+  UI.owl('.client_logo', {
     items: 6,
     loop: true,
     dots: false,
@@ -137,45 +153,39 @@ if (client.length) {
         items: 3
       },
       577: {
-        items:3,
+        items: 3
       },
       991: {
-        items:5,
+        items: 5
       },
       1200: {
-        items: 6,
+        items: 6
       }
-    },
+    }
   });
-}
 
+  // Skill bars: count the label and the bar up to the label's data-count.
+  UI.ready(function () {
+    var time = 1500;
 
-document.addEventListener("DOMContentLoaded", function() {
-  
-  var progressBar = document.querySelectorAll(".progress-bar");
-  var time = 1500;
-  
+    UI.toElements('.progress-bar').forEach(function (bar) {
+      var label = bar.children[0];
+      var line = bar.children[1];
+      // Bootstrap's own .progress-bar has no label and line inside it.
+      if (!label || !line || !line.children[0]) return;
+      var count = 0;
+      var dataCount = label.getAttribute('data-count');
+      var lineCount = line.children[0];
 
-  progressBar.forEach(function(i) {
-    let label = i.children[0];
-    let line = i.children[1];
-    let count = 0;
-    let dataCount = label.getAttribute("data-count");
-    let lineCount = line.children[0];
- 
-    let runTime = time/dataCount;
-    
-    let animationLineCount = setInterval(function(){
-      if(count < dataCount){
-        count++;
-        label.innerHTML = count + '%';
-        lineCount.style.width = count + '%';
-      }
-    },runTime);
+      var runTime = time / dataCount;
+
+      setInterval(function () {
+        if (count < dataCount) {
+          count++;
+          label.innerHTML = count + '%';
+          lineCount.style.width = count + '%';
+        }
+      }, runTime);
+    });
   });
-});
-
-
-
-
-}(jQuery));
+}());

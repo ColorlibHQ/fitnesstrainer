@@ -10,7 +10,7 @@
 add_action( 'wp_enqueue_scripts', 'fitnstr_sl_enqueue_scripts' );
 function fitnstr_sl_enqueue_scripts() {
 
-	wp_enqueue_script( 'fitnstr-post-likes', FITNSTR_DIR_JS_URI . 'post-likes.js', array( 'jquery' ), '0.5', false );
+	wp_enqueue_script( 'fitnstr-post-likes', FITNSTR_DIR_JS_URI . 'post-likes.js', array( 'fitnstr-ui-js' ), '0.5-s2', true );
 
 	wp_localize_script( 'fitnstr-post-likes', 'simpleLikes', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),

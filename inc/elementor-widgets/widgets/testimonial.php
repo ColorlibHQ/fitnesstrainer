@@ -341,54 +341,61 @@ class Fitnstr_Testimonial extends Widget_Base {
         if( \Elementor\Plugin::$instance->editor->is_edit_mode() === true  ) {
         ?>
         <script>
-        ( function( $ ){
-
-            $('.slider').slick({
-                slidesToShow: 1,
-                speed: 1000,
-                infinite: true,
-                autoplay:false,
-                pauseOnHover: true,
-                dots: false,
-                prevArrow: '<i class="slick_left flaticon-left-arrow"></i>',
-                nextArrow: '<i class="slick_right flaticon-arrow-pointing-to-right"></i>',
-                responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
+        (function () {
+            function run() {
+                var UI = window.ColorlibUI;
+                if (!UI) return;
+                UI.slick('.slider', {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
+                    speed: 1000,
                     infinite: true,
-                    }
-                },
-                {
-                    breakpoint: 991,
-                    settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false
-                    }
-                }, 
-                {
-                    breakpoint: 600,
-                    settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false
-                    }
-                }
-                ]
-            });
-            
-        })(jQuery);
+                    autoplay:false,
+                    pauseOnHover: true,
+                    dots: false,
+                    prevArrow: '<i class="slick_left flaticon-left-arrow"></i>',
+                    nextArrow: '<i class="slick_right flaticon-arrow-pointing-to-right"></i>',
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                infinite: true,
+                            }
+                        },
+                        {
+                            breakpoint: 991,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                arrows: false
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                arrows: false
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                arrows: false
+                            }
+                        }
+                    ]
+                });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+        })();
         </script>
         <?php 
         }

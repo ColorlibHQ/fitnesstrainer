@@ -217,11 +217,11 @@ class Fitnstr_Partners extends Widget_Base {
         if( \Elementor\Plugin::$instance->editor->is_edit_mode() === true  ) {
         ?>
         <script>
-        ( function( $ ){
-            $(document).ready(function() {
-                var client = $('.client_logo');
-                if (client.length) {
-                client.owlCarousel({
+        (function () {
+            function run() {
+                var UI = window.ColorlibUI;
+                if (!UI) return;
+                UI.owl('.client_logo', {
                     items: 6,
                     loop: true,
                     dots: false,
@@ -232,23 +232,27 @@ class Fitnstr_Partners extends Widget_Base {
                     smartSpeed: 2000,
                     margin: 20,
                     responsive: {
-                    0: {
-                        items: 3
-                    },
-                    577: {
-                        items:3,
-                    },
-                    991: {
-                        items:5,
-                    },
-                    1200: {
-                        items: 6,
-                    }
+                        0: {
+                            items: 3
+                        },
+                        577: {
+                            items:3,
+                        },
+                        991: {
+                            items:5,
+                        },
+                        1200: {
+                            items: 6,
+                        }
                     },
                 });
-                }
-            });
-        })(jQuery);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+        })();
         </script>
         <?php 
         }
